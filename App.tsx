@@ -73,6 +73,13 @@ export default function App() {
     }
   }, []);
 
+  const handleNewAnalysis = useCallback(() => {
+    setAnalysisResult(null);
+    setError(null);
+    setIsInitialState(true);
+    setLoadingMessage('');
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans">
       <Header />
@@ -83,8 +90,8 @@ export default function App() {
           <div className="mt-8">
             {isInitialState && <IntroContent />}
             {isLoading && <LoadingSpinner message={loadingMessage} />}
-            {error && <ErrorMessage message={error} />}
-            {analysisResult && <AnalysisReport report={analysisResult} />}
+            {error && <ErrorMessage message={error} onNewAnalysis={handleNewAnalysis} />}
+            {analysisResult && <AnalysisReport report={analysisResult} onNewAnalysis={handleNewAnalysis} />}
           </div>
         </div>
       </main>
