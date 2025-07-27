@@ -38,7 +38,7 @@ export default function App() {
         setLoadingMessage('Checking for YouTube transcript...');
         const { transcript: fetchedTranscript, videoId } = await getTranscriptFromUrl(videoUrl);
         
-        videoTitle = `Analysis for video: ${videoId}`;
+        videoTitle = `Analysis for video: ${videoUrl}`;
 
         if (fetchedTranscript) {
           transcript = fetchedTranscript;

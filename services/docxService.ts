@@ -81,16 +81,16 @@ export const generateDocxFromReport = (report: AnalysisReportData): Document => 
 
     const referenceSection: Paragraph[] = [];
     if (report.analysisDate && report.source) {
-        const year = new Date(report.analysisDate).getFullYear();
         referenceSection.push(
             createSectionHeading("Bibliographic Reference (APA-Style)")
         );
         referenceSection.push(
             new Paragraph({
                 children: [
-                    new TextRun({ text: `Polanco, M. (${year}). `, size: 22 }),
-                    new TextRun({ text: `Ethical Analysis of "${report.videoTitle}". `, italics: true, size: 22 }),
-                    new TextRun({ text: `UFM Ethical Content Analyzer. Retrieved ${report.analysisDate} from ${report.source}.`, size: 22 }),
+                    new TextRun({ text: `Polanco, M. (2025). `, size: 22 }),
+                    new TextRun({ text: `Ethical Analysis of video: ${report.source}. `, size: 22 }),
+                    new TextRun({ text: `Ethical Content Analyzer`, italics: true, size: 22 }),
+                    new TextRun({ text: `. Retrieved ${report.analysisDate} from https://ethical-content-analyzer.vercel.app/.`, size: 22 }),
                 ],
                 style: "wellSpaced",
             })

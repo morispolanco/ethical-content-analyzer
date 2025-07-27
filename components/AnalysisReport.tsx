@@ -125,7 +125,7 @@ export const AnalysisReport: React.FC<{ report: AnalysisReportData, onNewAnalysi
               <h3 className="font-semibold text-lg text-slate-700 dark:text-slate-200 mb-2">Bibliographic Reference (APA-Style)</h3>
               <div className="text-sm text-slate-600 dark:text-slate-400 bg-slate-200 dark:bg-slate-900/50 p-4 rounded-lg">
                   <p className="font-mono text-xs md:text-sm break-words">
-                      Polanco, M. ({new Date(report.analysisDate).getFullYear()}). <em>Ethical Analysis of "{report.videoTitle}"</em>. UFM Ethical Content Analyzer. Retrieved {report.analysisDate} from {report.source}.
+                      Polanco, M. (2025). Ethical Analysis of video: {report.source}. <em>Ethical Content Analyzer</em>. Retrieved {report.analysisDate} from https://ethical-content-analyzer.vercel.app/.
                   </p>
               </div>
           </div>
