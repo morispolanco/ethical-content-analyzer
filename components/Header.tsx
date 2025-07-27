@@ -11,6 +11,9 @@ export const Header: React.FC = () => {
         <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-1">
           AI-powered analysis of ethical considerations in YouTube content.
         </p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Developed by Dr. Mois Polanco, mp@ufm.edu
+        </p>
       </div>
     </header>
   );

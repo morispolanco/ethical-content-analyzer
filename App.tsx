@@ -61,7 +61,12 @@ export default function App() {
 
       setLoadingMessage('Analyzing transcript...');
       const result = await analyzeTranscript(transcript, videoTitle);
-      setAnalysisResult(result);
+
+      const analysisDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const source = typeof queryOrFile === 'string' ? queryOrFile : queryOrFile.name;
+
+      setAnalysisResult({ ...result, analysisDate, source });
+
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);

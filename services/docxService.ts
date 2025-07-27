@@ -1,3 +1,4 @@
+
 import {
     Document,
     Paragraph,
@@ -78,6 +79,23 @@ export const generateDocxFromReport = (report: AnalysisReportData): Document => 
         })
         : [new Paragraph({ text: "Based on the analysis, no significant ethical concerns were detected.", style: "wellSpaced" })];
 
+    const referenceSection: Paragraph[] = [];
+    if (report.analysisDate && report.source) {
+        const year = new Date(report.analysisDate).getFullYear();
+        referenceSection.push(
+            createSectionHeading("Bibliographic Reference (APA-Style)")
+        );
+        referenceSection.push(
+            new Paragraph({
+                children: [
+                    new TextRun({ text: `Polanco, M. (${year}). `, size: 22 }),
+                    new TextRun({ text: `Ethical Analysis of "${report.videoTitle}". `, italics: true, size: 22 }),
+                    new TextRun({ text: `UFM Ethical Content Analyzer. Retrieved ${report.analysisDate} from ${report.source}.`, size: 22 }),
+                ],
+                style: "wellSpaced",
+            })
+        );
+    }
 
     const doc = new Document({
         styles: {
@@ -107,10 +125,11 @@ export const generateDocxFromReport = (report: AnalysisReportData): Document => 
                 new Paragraph({ text: report.summary, style: "wellSpaced" }),
 
                 createSectionHeading("Detailed Findings"),
-                ...issueSections
+                ...issueSections,
+                ...referenceSection,
             ],
         }],
     });
 
     return doc;
-}
+};

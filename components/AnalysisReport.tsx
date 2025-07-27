@@ -100,7 +100,7 @@ export const AnalysisReport: React.FC<{ report: AnalysisReportData, onNewAnalysi
             aria-label="Start new analysis"
           >
             <RefreshIcon className="h-5 w-5" />
-            Nuevo análisis
+            Analyze Another
           </button>
         </div>
       </div>
@@ -118,6 +118,17 @@ export const AnalysisReport: React.FC<{ report: AnalysisReportData, onNewAnalysi
             <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-100">No Major Ethical Issues Found</h3>
             <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-md">Based on the analysis of the provided transcript, no significant ethical concerns were detected. The content appears to be suitable for its target audience.</p>
         </div>
+      )}
+
+      {report.analysisDate && report.source && (
+          <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+              <h3 className="font-semibold text-lg text-slate-700 dark:text-slate-200 mb-2">Bibliographic Reference (APA-Style)</h3>
+              <div className="text-sm text-slate-600 dark:text-slate-400 bg-slate-200 dark:bg-slate-900/50 p-4 rounded-lg">
+                  <p className="font-mono text-xs md:text-sm break-words">
+                      Polanco, M. ({new Date(report.analysisDate).getFullYear()}). <em>Ethical Analysis of "{report.videoTitle}"</em>. UFM Ethical Content Analyzer. Retrieved {report.analysisDate} from {report.source}.
+                  </p>
+              </div>
+          </div>
       )}
     </div>
   );

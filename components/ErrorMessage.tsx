@@ -26,7 +26,7 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onNewAnalys
           aria-label="Start new analysis"
         >
           <RefreshIcon className="h-5 w-5" />
-          Nuevo análisis
+          Analyze Another
         </button>
       </div>
     </div>

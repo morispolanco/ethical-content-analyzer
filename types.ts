@@ -19,4 +19,6 @@ export interface AnalysisReportData {
     summary: string;
     videoTitle: string;
     issues: EthicalIssue[];
+    source?: string;
+    analysisDate?: string;
 }
