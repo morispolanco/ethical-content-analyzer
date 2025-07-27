@@ -1,0 +1,6 @@
+{
+  "name": "Ethical Content Analyzer for YouTube Series",
+  "description": "An application to analyze YouTube video transcripts for potential ethical issues, such as biased language, stereotyping, and harmful encouragements, and generate a detailed report.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
