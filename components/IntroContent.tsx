@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BeakerIcon } from './icons';
 
@@ -25,6 +24,9 @@ export const IntroContent: React.FC = () => {
                     </li>
                 </ul>
             </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-8">
+                Developed by Dr. Mois Polanco, mp@ufm.edu
+            </p>
         </div>
     );
 };
